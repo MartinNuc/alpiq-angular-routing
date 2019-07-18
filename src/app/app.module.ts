@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { RandomJokeComponent } from './components/random-joke/random-joke.component';
+import { JokeComponent } from './components/joke/joke.component';
+import { JokePageComponent } from './pages/joke-page/joke-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoriesComponent,
-    RandomJokeComponent
+    RandomJokeComponent,
+    JokePageComponent,
+    JokeComponent
   ],
   imports: [
     BrowserModule,
