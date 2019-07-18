@@ -1,9 +1,8 @@
-import { JokeService } from 'src/app/joke.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Joke } from 'src/app/joke';
-import { switchMap, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-joke-page',
@@ -13,17 +12,9 @@ import { switchMap, map } from 'rxjs/operators';
 export class JokePageComponent implements OnInit {
   joke$: Observable<Joke>;
 
-  constructor(
-    private jokeService: JokeService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.joke$ = this.route.paramMap.pipe(
-      map(params => params.get('category')),
-      switchMap(category =>
-        this.jokeService.fetchJokeByCategory(category)
-      )
-    );
+    this.joke$ = this.route.data.pipe(map(data => data.joke));
   }
 }
