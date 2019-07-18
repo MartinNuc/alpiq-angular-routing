@@ -1,13 +1,4 @@
 
-<button type="button" (click)="reload()">reload</button>
-
-<div *ngIf="joke$ | async as joke; else loading">
-  <div>{{ joke.id }}</div>
-  <div>{{ joke.value }}</div>
-</div>
-
-<ng-template #loading>
-  Joke is loading
-</ng-template>
-
 <router-outlet></router-outlet>
+
+<app-random-joke></app-random-joke>

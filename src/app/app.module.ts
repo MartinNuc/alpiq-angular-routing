@@ -4,10 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { RandomJokeComponent } from './components/random-joke/random-joke.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CategoriesComponent,
+    RandomJokeComponent
   ],
   imports: [
     BrowserModule,

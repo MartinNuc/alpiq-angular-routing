@@ -12,4 +12,8 @@ export class JokeService {
   fetchRandomJoke() {
     return this.http.get<Joke>('https://api.chucknorris.io/jokes/random');
   }
+
+  fetchCategories() {
+    return this.http.get<string[]>('https://api.chucknorris.io/jokes/categories');
+  }
 }
